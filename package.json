@@ -1,0 +1,25 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "weather": "./dist/src/index.js"
+  },
+  "files": ["dist"],
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && chmod 755 dist/src/index.js"
+  },
+  "keywords": [],
+  "author": "Adam Robson <adamrayrobson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "25.6.0",
+    "typescript": "6.0.3"
+  }
+}
