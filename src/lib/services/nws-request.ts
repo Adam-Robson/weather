@@ -1,6 +1,6 @@
 import { USER_AGENT } from "../constants/user-agent.js";
 
-export async function NWSRequest<T>(url: string): Promise<T | null>{
+export async function nwsRequest<T>(url: string): Promise<T | null>{
   const headers = {
     "User-Agent": USER_AGENT,
     Accept: "application/geo+json",
