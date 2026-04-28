@@ -7,12 +7,12 @@
     "weather": "./dist/src/index.js"
   },
   "files": ["dist"],
-  "main": "./dist/src/index.js",
-  "exports": {
-    ".": "./dist/src/index.js"
+    "weather": "./dist/weather.js"
   },
+  "files": ["dist"],
+  "main": "index.js",
   "scripts": {
-    "build": "tsc && chmod 755 dist/src/index.js"
+    "build": "tsc && node -e \"import('node:fs').then(fs => { fs.writeFileSync('dist/weather.js', '#!/usr/bin/env node\\nimport \\\"./src/index.js\\\";\\n'); fs.chmodSync('dist/weather.js', 0o755); })\""
   },
   "keywords": [],
   "author": "Adam Robson <adamrayrobson@gmail.com>",
