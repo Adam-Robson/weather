@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { NWSRequest } from '../services/nws-request.js';
 import { NWS_API_BASE } from '../constants/nws-api-base.js';
 import { formatAlert } from '../utils/format-alert.js';
-import { AlertsResponse } from '../types/alerts-response.js';
+import type { AlertsResponse } from '../types/alerts-response.js';
 import type { PointsResponse } from '../types/points-response.js';
 import type { ForecastResponse } from '../types/forecast-response.js';
 import type { ForecastPeriod } from '../types/forecast-period.js';
