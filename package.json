@@ -7,7 +7,10 @@
     "weather": "./dist/src/index.js"
   },
   "files": ["dist"],
-  "main": "index.js",
+  "main": "./dist/src/index.js",
+  "exports": {
+    ".": "./dist/src/index.js"
+  },
   "scripts": {
     "build": "tsc && chmod 755 dist/src/index.js"
   },
