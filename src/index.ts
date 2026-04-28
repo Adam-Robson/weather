@@ -1,20 +1,14 @@
-import { server } from "./lib/server.js";
-import { createServer } from "./lib/utils/create-server.js";
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { registerTools } from "./lib/tools.js";
 
-async function asyncMain() {
-  const s: McpServer = server;
-  return await createServer(s);
-}
+const server = new McpServer({
+  name: "Weather MCP Server",
+  version: "1.0.0",
+});
 
-function main() {
-  asyncMain().catch((e) => {
-    if (e instanceof Error) {
-      console.error("Error in asyncMain():", e.message);
-    }
-    console.error("Fatal error in asyncMain():", e);
-    process.exit(1);
-  });
-}
+registerTools(server);
 
-main();
+console.error("Weather MCP Server firing up on stdio...");
+await server.connect(new StdioServerTransport());
