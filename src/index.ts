@@ -1,10 +1,9 @@
 import { server } from "./lib/server.js";
 import { createServer } from "./lib/utils/create-server.js";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 async function asyncMain() {
-  const s: McpServer = server;
-  return await createServer(s);
+  return await createServer(server);
 }
 
 function main() {
