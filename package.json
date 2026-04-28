@@ -1,0 +1,28 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "weather": "./dist/src/index.js"
+  },
+  "files": ["dist"],
+    "weather": "./dist/weather.js"
+  },
+  "files": ["dist"],
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node -e \"import('node:fs').then(fs => { fs.writeFileSync('dist/weather.js', '#!/usr/bin/env node\\nimport \\\"./src/index.js\\\";\\n'); fs.chmodSync('dist/weather.js', 0o755); })\""
+  },
+  "keywords": [],
+  "author": "Adam Robson <adamrayrobson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "25.6.0",
+    "typescript": "6.0.3"
+  }
+}
