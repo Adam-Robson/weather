@@ -138,7 +138,7 @@ server.registerTool(
         `${period.name || 'Unknown'}:`,
         `Temperature: ${period.temperature || 'Unknown'}°${period.temperatureUnit || 'F'}`,
         `Wind: ${period.windSpeed || 'Unknown'} ${period.windDirection || ''}`,
-        `${period.shortForecast || 'No forecast available'}`,
+        `${period.shortForecast ?? 'No forecast available'}`,
         '---',
       ].join('\n'),
     );
